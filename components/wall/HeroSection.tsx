@@ -32,7 +32,7 @@ export function HeroSection({ signatureCount }: HeroSectionProps) {
           FAME
         </h1>
         <p className="font-[family-name:var(--font-caveat)] font-bold text-[clamp(19px,3.6vw,30px)] text-gold-bright mt-4 -rotate-[1.4deg] animate-tagline-glow">
-          Leave your mark on the Silver Jubilee Edition
+        Turning quiet readers into legendary ones
         </p>
         <p className="font-[family-name:var(--font-space-mono)] text-[11px] tracking-[0.16em] uppercase text-[#c9b691] opacity-65 mt-5">
           <b className="text-gold-bright opacity-100">{signatureCount}</b> frames
