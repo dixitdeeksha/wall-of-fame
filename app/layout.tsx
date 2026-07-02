@@ -26,7 +26,7 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
 });
 
-const siteTitle = "Books & Brews Silver Jubilee Wall of Fame";
+const siteTitle = "Books & Brews Wall of Fame";
 const siteDescription =
   "Celebrate the Silver Jubilee Edition. Registered attendees can claim their place on the Books & Brews Wall of Fame.";
 

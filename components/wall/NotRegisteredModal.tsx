@@ -29,7 +29,7 @@ export function NotRegisteredModal({ open, onClose }: NotRegisteredModalProps) {
           You&apos;re not registered yet.
         </h2>
         <p className="font-[family-name:var(--font-newsreader)] italic text-cream/80 mb-2">
-          Admire the Wall.
+          Admire the Wall of Fame!
         </p>
         <p className="font-[family-name:var(--font-newsreader)] text-cream/70 mb-6">
           Want your name here?
