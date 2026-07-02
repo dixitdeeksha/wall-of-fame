@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-wall: #0f0f0f;
+  --color-wall-light: #1a1a1a;
+  --color-frame-black: #0b0908;
+  --color-gold: #d4af37;
+  --color-gold-bright: #f7d774;
+  --color-cream: #fff8e7;
+  --font-display: var(--font-fraunces);
+  --font-signature: var(--font-caveat);
+  --font-body: var(--font-newsreader);
+  --font-mono: var(--font-space-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-wall);
+  color: var(--color-cream);
+  font-family: var(--font-body), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes framePop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.09);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-frame-pop {
+  animation: framePop 0.6s ease;
+}
+
+@keyframes taglineGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 14px rgba(247, 215, 116, 0.35);
+  }
+  50% {
+    text-shadow: 0 0 22px rgba(247, 215, 116, 0.55);
+  }
+}
+
+.animate-tagline-glow {
+  animation: taglineGlow 3s ease-in-out infinite;
 }

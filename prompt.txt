@@ -1,0 +1,412 @@
+PROMPT
+
+You are a senior full-stack engineer, UI/UX designer, animation specialist, and event engagement product designer.
+
+Build a production-ready web application called:
+
+Books & Brews Silver Jubilee Wall of Fame
+
+The application is designed for a literary community event.
+
+Purpose:
+
+Create excitement and FOMO.
+Encourage people to register for the event.
+Allow only registered attendees to permanently sign the Wall of Fame.
+Maximum expected users: 100.
+Mobile-first design.
+Must feel premium, luxurious, and award-night inspired.
+Tech Stack
+
+Use:
+
+Frontend:
+
+Next.js 15
+TypeScript
+TailwindCSS
+Framer Motion
+
+Backend:
+
+Supabase
+
+Database:
+
+PostgreSQL (Supabase)
+
+Hosting:
+
+Vercel
+
+Authentication:
+
+No login required
+
+Expected Scale:
+
+Maximum 100 users
+
+Keep architecture simple.
+
+Event Context
+
+Display this story prominently:
+
+"What began as a handful of readers and one shared pot of coffee, Books & Brews, Agra's first reading and analogue community, has grown into over 24 incredible meetups.
+
+This month we celebrate our landmark Silver Jubilee Edition.
+
+Join us for the ultimate Meet Gala & Award Night featuring red carpet moments, live performances, community recognition, and the first-ever Books & Brews Awards."
+
+Landing Page Experience
+
+Create a stunning landing page.
+
+Theme:
+
+Luxury Award Night
+Hall of Fame
+Black velvet wall
+Gold accents
+Warm spotlight lighting
+Premium cinematic feel
+
+Color palette:
+
+Background:
+#0F0F0F
+
+Gold:
+#D4AF37
+
+Bright Gold:
+#F7D774
+
+Cream:
+#FFF8E7
+
+Use elegant typography.
+
+Hero Section
+
+Top center:
+
+WALL OF FAME
+
+Make "OF" underlined with glowing gold.
+
+Below:
+
+"Leave your mark on the Silver Jubilee Edition"
+
+Add subtle glow animation.
+
+Main Attraction
+
+The Wall
+
+This is the entire focus of the page.
+
+Display:
+
+24 empty premium frames initially.
+
+Grid:
+
+Desktop:
+8 columns
+
+Tablet:
+6 columns
+
+Mobile:
+4 columns
+
+Frames should look like:
+
+Award plaques
+Premium black frame
+Gold border
+Spotlight effect
+Signature Experience
+
+At bottom of wall:
+
+Input box
+
+Placeholder:
+
+"Type your name..."
+
+Button:
+
+"Claim Your Frame"
+
+Flow:
+
+User enters name.
+
+System checks registration.
+
+If registered:
+
+Animate name flying upward.
+
+The name should:
+
+travel from input box
+move toward first empty frame
+scale up while moving
+slightly rotate
+settle like a handwritten signature
+
+Frame lights up gold.
+
+Small celebratory sparkle effect.
+
+Signature Styling
+
+Inside frame:
+
+Show signature large.
+
+Use script font.
+
+Must occupy 70-80% of frame.
+
+Examples:
+
+Khushi
+Deeksha
+Rahul
+
+Should look handwritten.
+
+Long names automatically resize.
+
+Registration Validation
+
+Only registered users can sign.
+
+Database Table:
+
+registered_users
+
+Columns:
+
+id
+name
+email
+created_at
+
+When name entered:
+
+Normalize:
+
+lowercase
+trim spaces
+
+Check database.
+
+If not found:
+
+Show modal:
+
+You're not registered yet.
+
+Admire the Wall.
+
+Want your name here?
+
+Register now.
+
+[ Register for Gala ]
+
+Button URL:
+
+https://forms.gle/orBRhUVpKYonykMG9
+
+Open in new tab.
+
+Prevent Duplicates
+
+Database Table:
+
+wall_signatures
+
+Columns:
+
+id
+name
+signed_at
+
+Rules:
+
+One signature per person.
+
+If already signed:
+
+Show:
+
+"You've already claimed your frame."
+
+Do not create duplicate.
+
+Admin Dashboard
+
+Route:
+
+/admin
+
+Password Protected
+
+Environment Variable:
+
+ADMIN_PASSWORD
+
+Simple password screen.
+
+No authentication provider required.
+
+Admin Features
+View total registrations
+View total signatures
+Add registered users manually
+Bulk upload names
+
+Textarea input:
+
+One name per line
+
+Example:
+
+Khushi
+Rahul
+Ananya
+Deeksha
+
+Save all.
+
+Dashboard Analytics
+
+Show:
+
+Registered Users: X
+
+Wall Signatures: X
+
+Frames Filled: X/100
+
+Completion Percentage
+
+Progress Bar
+
+Wall Growth Logic
+
+Initially show:
+
+24 frames
+
+When all frames filled:
+
+Add another complete row.
+
+Never add single frame.
+
+Example:
+
+Desktop:
+
+24
+32
+40
+48
+
+Always full rows.
+
+Real-Time Updates
+
+Use Supabase Realtime.
+
+When someone signs:
+
+Every open page updates automatically.
+
+New signature appears live.
+
+No refresh required.
+
+Database Schema
+
+Create SQL migrations.
+
+registered_users
+
+id uuid primary key
+name text not null
+email text
+created_at timestamp
+
+wall_signatures
+
+id uuid primary key
+name text unique not null
+signed_at timestamp
+Anti-Abuse Rules
+
+Maximum users:
+
+100
+
+Rate limit:
+
+1 request per 5 seconds per IP
+
+Trim whitespace.
+
+Ignore capitalization differences.
+
+Reject empty names.
+
+Reject names over 50 characters.
+
+Mobile Experience
+
+Must be perfect on:
+
+iPhone
+Android
+
+Input always visible.
+
+Animations smooth.
+
+No layout shift.
+
+SEO
+
+Title:
+
+Books & Brews Silver Jubilee Wall of Fame
+
+Description:
+
+Celebrate the Silver Jubilee Edition. Registered attendees can claim their place on the Books & Brews Wall of Fame.
+
+Deliverables
+
+Generate:
+
+Complete Next.js project
+Folder structure
+Supabase SQL
+Environment variables
+API routes
+Tailwind styles
+Framer Motion animations
+Admin dashboard
+Deployment instructions
+README
+
+The output should be production-ready and deployable on Vercel without requiring additional architectural decisions.
