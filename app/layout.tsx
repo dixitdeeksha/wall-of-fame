@@ -26,15 +26,48 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
 });
 
+const siteTitle = "Books & Brews Silver Jubilee Wall of Fame";
+const siteDescription =
+  "Celebrate the Silver Jubilee Edition. Registered attendees can claim their place on the Books & Brews Wall of Fame.";
+
+function getSiteUrl(): string {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  if (process.env.URL) {
+    return process.env.URL.startsWith("http")
+      ? process.env.URL.replace(/\/$/, "")
+      : `https://${process.env.URL}`;
+  }
+  return "http://localhost:3000";
+}
+
 export const metadata: Metadata = {
-  title: "Books & Brews Silver Jubilee Wall of Fame",
-  description:
-    "Celebrate the Silver Jubilee Edition. Registered attendees can claim their place on the Books & Brews Wall of Fame.",
+  metadataBase: new URL(getSiteUrl()),
+  title: siteTitle,
+  description: siteDescription,
   openGraph: {
-    title: "Books & Brews Silver Jubilee Wall of Fame",
-    description:
-      "Celebrate the Silver Jubilee Edition. Registered attendees can claim their place on the Books & Brews Wall of Fame.",
+    title: siteTitle,
+    description: siteDescription,
     type: "website",
+    siteName: "Books & Brews",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: siteTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/og-image.jpg"],
   },
 };
 

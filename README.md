@@ -43,6 +43,7 @@ Fill in:
 
 | Variable | Description |
 |----------|-------------|
+| `NEXT_PUBLIC_SITE_URL` | Your live site URL (e.g. `https://your-site.netlify.app`) — required for share previews |
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable key (`sb_publishable_...`) |
 | `SUPABASE_SECRET_KEY` | Optional — secret key for production (recommended) |
